@@ -251,7 +251,9 @@ bool SampleCenterPoint::infer()
 
     std::vector<std::string> filePath = glob("../"+mParams.dataDirs[0]+"/points/*.bin");
     
-    for(auto idx = 0; idx < filePath.size(); idx++){
+    int idx = 0;
+    for(auto cnt = 0; cnt < 200; cnt++){
+    // for(auto idx = 0; idx < filePath.size(); idx++){
         std::cout << "filePath[idx]: " << filePath[idx] << std::endl;
         int pointNum = 0;
         if (!processInput(inputPointBuf, filePath[idx], pointNum))
